@@ -1,0 +1,45 @@
+.table {
+    width: 100%;
+    padding: 3.125rem;
+    font-size: 14px;
+    border-collapse: collapse; 
+
+    strong { color: $primary-color; }
+
+    thead tr{
+        border: {
+            top: 1px solid rgba(lighten($c-black, 70%), .4);
+            bottom: 1px solid rgba(lighten($c-black, 70%), .4);
+        }
+    }
+
+    tbody tr { border-bottom: 1px solid rgba(lighten($c-black, 50%), .1); }
+
+    tr {
+        position: relative;
+
+		@include hover {
+			.action-dots svg { fill: $primary-color; }
+		}
+    }
+
+    th { 
+        padding: 1rem 0;
+        font: {
+            size: 12px;
+            weight: 600;
+        }
+        text: {
+            transform: uppercase;
+            align: left; 
+        }
+
+        strong { font-weight: 600; }
+    }
+
+    td {
+        height: 80px;
+
+        &:first-child { font-weight: 700; }
+    }
+}
