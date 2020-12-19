@@ -19,3 +19,12 @@
     &-large {
     }
 }
+
+.page-title {
+    @include scale-font($small-ratio: .5, $mid-ratio: .75, $final-size: 2.25rem);
+    font: {
+        family: $secondary-font;
+        weight: 800;
+    }
+    text-transform: uppercase;
+}

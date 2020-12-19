@@ -1,2 +1,27 @@
 .site-header {
+    .content-links {
+        a {
+            @include flex-all($align: center);
+            text-decoration: none;
+            color: $c-white;
+
+            svg {
+                width: 28px;
+                height: 28px;
+                margin-left: 10px;
+                fill: $primary-color;
+                transition: fill .5s;
+            }
+
+            @include hover {
+                svg { fill: $c-white; }
+            }
+        }
+
+        @include respond-to($vp-large) {
+            position: absolute;
+            top: 24px;
+            right: 60px;
+        }
+    }
 }

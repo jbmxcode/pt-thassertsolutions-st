@@ -6,25 +6,25 @@ $vp-large				: 1024px;	// large size
 
 $vp-max					: 1350px;	// max viewport
 
-$site-width				: $vp-max;
+$site-width				: 1370px;
 
 // Header & Footer Sizes
-$header-height          : 75px;
-$footer-height          : 110px;
+$header-height          : 112px;
+$footer-height          : 112px;
 
 // Logos Sizes
 
 $header-logo-width		: 100px;
-$header-logo-height		: 23px;
-$footer-logo-width		: 180px;
-$footer-logo-height		: 25px;
+$header-logo-height		: 100px;
+$footer-logo-width		: 100px;
+$footer-logo-height		: 100px;
 
 // Colors
 
 $c-white                : rgb(255,255,255);
 $c-black                : rgb(0,0,0);
 $c-grey                 : rgb(104, 104, 104);
-$c-text                 : rgb(48, 48, 48);
+$c-text                 : rgb(25, 28, 31);
 
 $primary-color			: rgb(94, 61, 227);
 $color-over-primary		: $c-white;
@@ -49,10 +49,10 @@ $footer-logo-constrast-dark: "../images/footer-logo-constrast-dark.png";
 
 
 // Fonts & Sizes
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,800&family=Poppins:wght@800&display=swap');
 
 $primary-font			 : 'Open Sans', sans-serif;
-$secondary-font          : Arial, Helvetica, sans-serif;
+$secondary-font          : 'Poppins', sans-serif;
 
 $base-font-size			 : 16px;
 

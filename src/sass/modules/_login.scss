@@ -1,0 +1,38 @@
+.module-login {
+    h3 {
+        @include scale-font($small-ratio: .5, $mid-ratio: .75, $final-size: 2.25rem);
+        font-weight: 800;
+        color: $c-white;
+    }
+    
+    .content-text {
+        p {
+            @include scale-font($small-ratio: .5, $mid-ratio: .75, $final-size: 1.5rem);
+            margin: 0;
+            font-weight: 300;
+        }
+    }
+
+    .form {
+        margin: 2rem 0;
+
+        &-input {
+            color: $c-white;
+            background-color: $c-black;
+        }
+    }
+
+    @include respond-to($vp-large) {
+        .content-column {
+            &:last-child {
+                justify-content: center;
+                &__inner {
+                    @include width-constrain(390px);
+                    padding: 0;
+                }
+            }
+        }
+
+        .content-text { margin-bottom: 12.5rem; }
+    }
+}

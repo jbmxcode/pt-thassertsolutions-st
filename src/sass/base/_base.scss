@@ -9,6 +9,7 @@ body {
 }
 
 body {
+	@include flex-all(column, center);
 	margin: 0;
 	padding: 0;
 	font: {
@@ -18,8 +19,6 @@ body {
 	line-height: 1.5;
 	color: $c-text;
 	background-color: $secondary-color;
-
-	> header, > main, > footer { position: relative; }
 }
 
 a { transition: color .5s, background-color .5s; }
@@ -31,24 +30,75 @@ h4 { @include scale-font-heading("big"); }
 h5 { @include scale-font-heading("medium"); }
 h6 { @include scale-font-heading("base"); }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { margin: 0; }
+
+
 .site-header { z-index: 10; }
 
 .site-content { 
 	z-index: 8; 
+	height: 100%; 
 
 	@include respond-to($vp-large) {
+		height: calc(100% - 170px);
+
 		&__row {
 			height: 100%; 
 		}
 		&__row--inner { 
+			@include width-constrain;
 			height: 100%;
-			
-			.padding-row & { padding: 0 75px; }
 		}
 	}
 }
 
 .site-footer { z-index: 9; }
+
+.content {
+	overflow: hidden;
+	height: 100%;
+	border-radius: 10px;
+	box-shadow: 0 0 100px rgba($c-black, .4);
+	background-color: $secondary-color;
+
+	&-column {
+		@include bg-cover;
+		flex: 1;
+
+		&:first-child {
+			@include mask-fullsize { background-color: rgba($primary-color, .8); }
+
+			.content-column__inner { 
+				justify-content: space-between;
+				position: relative; 
+				color: $color-over-primary;
+			}
+		}
+		
+		&__inner {
+			@include flex-all(column, center);
+			height: 100%;
+		}
+	}
+
+	@include respond-to($vp-large) {		
+		@include flex-all($justify: space-between);
+
+		&-column {
+			&__inner { padding: 3.125rem; }
+
+			&:last-child {
+				flex: none;
+				width: 586px;
+			}
+		}
+	}
+}
 
 .full-screen {
 	overflow: hidden;
