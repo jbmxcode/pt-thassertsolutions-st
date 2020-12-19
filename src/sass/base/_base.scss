@@ -1,0 +1,66 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body { 
+	width: 100%;
+	height: 100%; 	
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font: {
+		size: $base-font-size;
+		family: $primary-font;
+	}
+	line-height: 1.5;
+	color: $c-text;
+
+	> header, > main, > footer { position: relative; }
+}
+
+a { transition: color .5s, background-color .5s; }
+
+h1 { @include scale-font-heading("huge"); }
+h2 { @include scale-font-heading("large"); }
+h3 { @include scale-font-heading("bigger"); }
+h4 { @include scale-font-heading("big"); }
+h5 { @include scale-font-heading("medium"); }
+h6 { @include scale-font-heading("base"); }
+
+.site-header { z-index: 10; }
+
+.site-content { 
+	z-index: 8; 
+
+	@include respond-to($vp-large) {
+		&__row {
+			height: 100%; 
+		}
+		&__row--inner { 
+			height: 100%;
+			
+			.padding-row & { padding: 0 75px; }
+		}
+	}
+}
+
+.site-footer { z-index: 9; }
+
+.full-screen {
+	overflow: hidden;
+
+	@include respond-to($vp-large) {
+		height: 100vh;
+	}
+}
+
+.width-constrain-row {
+	.row-inner {
+		@include respond-to($vp-large) {
+			@include width-constrain;
+		}
+	}
+}
