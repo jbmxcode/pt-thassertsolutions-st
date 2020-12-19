@@ -13,26 +13,56 @@
         }
     }
 
-    .form {
-        margin: 2rem 0;
+    .content-body {
+        p {
+            font-weight: 700;
+            color: $color-over-secondary; 
 
-        &-input {
-            color: $c-white;
-            background-color: $c-black;
+            a {
+                margin-left: 5px;
+                color: $primary-color;
+                cursor: pointer;
+
+                @include hover-color($color-over-secondary);
+            }
         }
     }
 
     @include respond-to($vp-large) {
         .content-column {
+            &:first-child {
+                flex: 1;
+                width: 100%;
+
+                .content-text {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                }
+            }
+
             &:last-child {
+                flex: none;
                 justify-content: center;
-                &__inner {
+                width: 585px;
+                margin: 0;
+
+                .content-body {
                     @include width-constrain(390px);
                     padding: 0;
                 }
             }
         }
 
+        .content-body {
+            width: 100%;
+            background-color: transparent;
+            
+            &:before { content: none;}
+        }
+
         .content-text { margin-bottom: 12.5rem; }
+
+        .align-right { justify-content: flex-end; }
     }
 }

@@ -14,11 +14,22 @@
 
     svg { margin-left: 10px; }
 
-    &-primary { 
+    &-links {
+        @include flex-all(row);
+        width: 100%;
+
+        .action:first-child { margin-right: 1rem; }
+    }
+
+    &-primary,
+    &-secondary { 
         max-width: 200px;
         width: 100%;
         height: 60px;
         border-radius: 10px;
+    }
+
+    &-primary { 
         color: $color-over-primary;
         background-color: $primary-color; 
         
@@ -28,6 +39,8 @@
     &-secondary {
         color: $color-over-secondary;
         background-color: $secondary-color; 
+        
+        @include hover-bg-color($primary-color, $color-over-primary);
     }
 
     &-link {
@@ -38,7 +51,4 @@
     }
 
     &-dots svg { fill: $secondary-color; }
-
-    &-chat {        
-    }
 }

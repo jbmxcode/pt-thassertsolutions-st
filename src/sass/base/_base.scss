@@ -122,21 +122,26 @@ h6 { margin: 0; }
 	}
 
 	&-body {
+		@include flex-all(column, center);
 		position: relative;
 		z-index: 2;
 		padding: 2rem 1rem;
 		background-color: $c-white; 
+
+		&__inner { width: 100%; }
 	}
 
 	&-links {
 		position: relative;
 
 		&__inner {
-			@include flex-all;
+			display: none;
 			position: absolute;
 			z-index: 2;
 			top: calc(100% + 5px);
 			right: 8px;
+
+			&.show { display: flex; }
 
 			.action {
 				width: 100px;
@@ -186,7 +191,7 @@ h6 { margin: 0; }
 				.content-column__inner {
 					padding: 3.125rem 0;
 
-					> .content-links {		
+					> .content-links {		 
 						.action { 
 							justify-content: flex-end;
 							color: $color-over-secondary; 
