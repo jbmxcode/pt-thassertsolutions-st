@@ -26,10 +26,10 @@ $c-black                : rgb(0,0,0);
 $c-grey                 : rgb(104, 104, 104);
 $c-text                 : rgb(48, 48, 48);
 
-$primary-color			: rgb(255, 108, 43);
+$primary-color			: rgb(94, 61, 227);
 $color-over-primary		: $c-white;
 
-$secondary-color		: rgb(85, 87, 89);
+$secondary-color		: rgb(25, 28, 31);
 $color-over-secondary	: $c-white;
 
 // Social Colors
@@ -48,9 +48,10 @@ $header-logo-constrast-dark: "../images/header-logo-constrast-dark.png";
 $footer-logo-constrast-dark: "../images/footer-logo-constrast-dark.png";
 
 
-// Fonts
+// Fonts & Sizes
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
-$primary-font			 : Helvetica-roman, sans-serif;
+$primary-font			 : 'Open Sans', sans-serif;
 $secondary-font          : Arial, Helvetica, sans-serif;
 
 $base-font-size			 : 16px;

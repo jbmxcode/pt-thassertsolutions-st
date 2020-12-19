@@ -17,6 +17,7 @@ body {
 	}
 	line-height: 1.5;
 	color: $c-text;
+	background-color: $secondary-color;
 
 	> header, > main, > footer { position: relative; }
 }
@@ -58,7 +59,7 @@ h6 { @include scale-font-heading("base"); }
 }
 
 .width-constrain-row {
-	.row-inner {
+	[class*="row-inner"] {
 		@include respond-to($vp-large) {
 			@include width-constrain;
 		}
