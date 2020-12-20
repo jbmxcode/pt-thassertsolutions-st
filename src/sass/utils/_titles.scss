@@ -5,26 +5,20 @@
         text-decoration: none;
         color: inherit;
     }
-
-    &-block {
-        
-    }
-    
-    &-small {      
-    }
-    
-    &-medium {      
-    }
-
-    &-large {
-    }
 }
 
 .page-title {
-    @include scale-font($small-ratio: .5, $mid-ratio: .75, $final-size: 2.25rem);
     font: {
+        size: 2.5rem;
         family: $secondary-font;
         weight: 800;
     }
-    text-transform: uppercase;
+    text: {
+        align: center;
+        transform: uppercase;
+    }
+
+    @include respond-to($vp-large) {
+        text-align: left;
+    }
 }

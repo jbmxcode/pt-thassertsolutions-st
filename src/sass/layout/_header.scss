@@ -1,5 +1,11 @@
 .site-header {
+    @include flex-all(column);
+    
     .content-links {
+        position: absolute;
+        top: 0;
+        right: 0;
+
         a {
             @include flex-all($align: center);
             text-decoration: none;

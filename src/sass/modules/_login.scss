@@ -1,11 +1,11 @@
-.module-login {
-    h3 {
-        @include scale-font($small-ratio: .5, $mid-ratio: .75, $final-size: 2.25rem);
-        font-weight: 800;
-        color: $c-white;
-    }
-    
-    .content-text {
+.module-login {    
+    .content-column:first-child .content-text {
+        h3 {
+            @include scale-font($small-ratio: .5, $mid-ratio: .75, $final-size: 2.25rem);
+            font-weight: 800;
+            color: $c-white;
+        }
+
         p {
             @include scale-font($small-ratio: .5, $mid-ratio: .75, $final-size: 1.5rem);
             margin: 0;
@@ -14,6 +14,8 @@
     }
 
     .content-body {
+        background-color: $secondary-color;
+
         p {
             font-weight: 700;
             color: $color-over-secondary; 
@@ -27,6 +29,8 @@
             }
         }
     }
+
+    .align-right { justify-content: flex-end; }
 
     @include respond-to($vp-large) {
         .content-column {
@@ -62,7 +66,5 @@
         }
 
         .content-text { margin-bottom: 12.5rem; }
-
-        .align-right { justify-content: flex-end; }
     }
 }
