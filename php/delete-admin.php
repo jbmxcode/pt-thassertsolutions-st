@@ -6,4 +6,4 @@ if( !isset( $_SESSION['user'] ) ):
     exit();
 endif;
 
-$user = ( isset( $_GET['id'] ) ) ? delete( $_GET['id'] ) : exit();
+$adminUser = ( isset( $_GET['id'] ) ) ? deleteAdmin( $_GET['id'] ) : exit();

@@ -1,16 +1,18 @@
 <?php 
 include_once( 'layout/template.php' );   
-template_header('Crud - Login', 'home'); 
+template_header('Crud - Register', 'home'); 
 
 if( isset($_SESSION['user'] ) ):
     header('Location: users.php');
     exit();
 endif;
 
-if( isset( $_POST['btnLogin'] ) ) :
+if( isset( $_POST['btnRegister'] ) ) :
     $email = $_POST['email']; 
     $password = $_POST['password']; 
-    login($email, $password);
+    $fname = $_POST['fname']; 
+    $lname = $_POST['lname']; 
+    createAdmin($email, $password, $fname, $lname);
 endif;
 
 ?>
@@ -34,28 +36,36 @@ endif;
                 <form action="" method="post" class="form form-login form-dark">
                     <div class="form-wrap">
                         <div class="form-group">
-                            <input type="email" name="email" id="email" placeholder="Email" class="form-input" autocomplete="on">
+                            <input type="email" name="email" id="email" placeholder="Email" class="form-input">
                         </div>
                     </div>
 
                     <div class="form-wrap">
                         <div class="form-group">
                             <input type="password" name="password" id="password" placeholder="Password" class="form-input">
-
-                            <div class="action-links align-right">
-                                <a class="action action-link">Forgot password?</a>
-                            </div>
                         </div>
                     </div>
 
                     <div class="form-wrap">
                         <div class="form-group">
-                            <button name="btnLogin" class="action action-primary">Log In</button>
+                            <input type="text" name="fname" id="fname" placeholder="First Name" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-wrap">
+                        <div class="form-group">
+                            <input type="text" name="lname" id="lname" placeholder="Last Name" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-wrap">
+                        <div class="form-group">
+                            <button name="btnRegister" class="action action-primary">Register</button>
                         </div>
                     </div>
                 </form>
                 
-                <p>Don't have an account? <a href="register.php">Sign Up</a></p>
+                <p>Already have an account? <a href="index.php">Login in</a></p>
             </div>
         </div>
     </div>                    

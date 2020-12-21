@@ -1,9 +1,9 @@
 <?php 
-include_once('template.php'); 
-template_header('Crud - All Users', 'users');
+include_once( 'layout/template.php' ); 
+template_header( 'Crud - All Users', 'users' );
 
-if(!isset($_SESSION['user'])):
-    header('Location: index');
+if( !isset( $_SESSION['user'] ) ):
+    header( 'Location: index.php' );
     exit();
 endif;
 

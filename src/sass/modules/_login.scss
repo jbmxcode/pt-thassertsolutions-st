@@ -22,6 +22,8 @@
     .content-body {
         background-color: $secondary-color;
 
+        h3 { color: $color-over-secondary; }
+
         p {
             font-weight: 700;
             color: $color-over-secondary; 

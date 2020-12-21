@@ -7,18 +7,8 @@ if( !isset( $_SESSION['user'] ) ):
     exit();
 endif;
 
-if( isset( $_POST['btnUpdate'] ) ) :
-    update( 
-        $_POST['fname'], 
-        $_POST['lname'], 
-        $_POST['phone'], 
-        $_POST['address'],
-        $_POST['id']
-    );
-endif;
-
 if( isset( $_POST['btnUpdateAdmin'] ) ) :
-    update( 
+    updateAdmin( 
         $_POST['fname'], 
         $_POST['lname'], 
         $_POST['password'], 
@@ -27,8 +17,7 @@ if( isset( $_POST['btnUpdateAdmin'] ) ) :
     );
 endif;
 
-$user = ( isset( $_GET['id'] ) ) ? selectSingle( $_GET['id'] ) : false;
-$adminUser = ( isset( $_GET['id'] ) ) ? selectSingle( $_GET['id'] ) : false;
+$adminUser = ( isset( $_GET['id'] ) ) ? selectSingleAdmin( $_GET['id'] ) : false;
 ?>
 
 <section class="content module-update">
@@ -53,46 +42,9 @@ $adminUser = ( isset( $_GET['id'] ) ) ? selectSingle( $_GET['id'] ) : false;
 
             <div class="content-body">
                 <div class="content-body__inner">
-                    <?php if ($user != false) { ?>
+                    <?php if ($adminUser != false): ?>
                     <form method="post" class="form form-update">
                         <h4>In ornare quam viverra orci sagittis eu volutpat</h4>
-
-                        <input type="hidden" name="id" value="<?php echo $user['id'] ?>">
-
-                        <div class="form-wrap">
-                            <div class="form-group">
-                                <input type="number" name="id_card" id="id_card" value="<?php echo $user['id_card'] ?>" disabled class="form-input form-input-disabled">
-                            </div>
-                        </div>
-
-                        <div class="form-wrap">
-                            <div class="form-group">
-                                <input type="text" name="fname" id="fname" value="<?php echo $user['fname'] ?>" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="lname" id="lname" value="<?php echo $user['lname'] ?>" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="number" name="phone" id="phone" value="<?php echo $user['phone'] ?>" class="form-input" required>
-                            </div>
-                        </div>
-
-                        <div class="form-wrap">
-                            <div class="form-group">
-                                <input type="text" name="address" id="address" value="<?php echo $user['address'] ?>" class="form-input" required>
-                            </div>
-                        </div>
-
-                        <div class="form-wrap">
-                            <div class="form-group action-links">
-                                <button name="btnUpdate" class="action action-primary">Update User</button>
-                                <a href="users.php" class="action action-secondary">Cancel</a>
-                            </div>
-                        </div>
-                    </form>
-                    <?php } elseif($adminUser != false) { ?>
-                    <form method="post" class="form form-update">
-                        <h4>admin In ornare quam viverra orci sagittis eu volutpat</h4>
 
                         <input type="hidden" name="id" value="<?php echo $adminUser['id'] ?>">
 
@@ -110,7 +62,7 @@ $adminUser = ( isset( $_GET['id'] ) ) ? selectSingle( $_GET['id'] ) : false;
                                 <input type="text" name="lname" id="lname" value="<?php echo $adminUser['lname'] ?>" class="form-input" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="password" id="password" value="<?php echo $adminUser['password'] ?>" class="form-input" required>
+                                <input type="password" name="password" id="password" value="<?php echo $adminUser['password'] ?>" class="form-input" required>
                             </div>
                         </div>
 
@@ -127,12 +79,12 @@ $adminUser = ( isset( $_GET['id'] ) ) ? selectSingle( $_GET['id'] ) : false;
                             </div>
                         </div>
                     </form>
-                    <?php } else {
+                    <?php else:
                         echo '<div class="message">
                         User is not set. Try again</br>
                         <a href="users.php" class="action action-primary">Return</a>
                         </div>';
-                    }
+                    endif;
                     ?>
                 </div>
             </div>                    

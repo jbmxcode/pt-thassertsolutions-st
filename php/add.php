@@ -1,9 +1,9 @@
 <?php 
-include_once( 'template.php' ); 
+include_once( 'layout/template.php' ); 
 template_header( 'Crud - Add User', 'update' ); 
 
 if( !isset( $_SESSION['user'] ) ):
-    header( 'Location: index' );
+    header( 'Location: index.php' );
     exit();
 endif;
 
@@ -69,7 +69,7 @@ endif;
                         <div class="form-wrap">
                             <div class="form-group action-links">
                                 <button name="btnInsert" class="action action-primary">Add User</button>
-                                <a href="users" class="action action-secondary">Cancel</a>
+                                <a href="users.php" class="action action-secondary">Cancel</a>
                             </div>
                         </div>
                     </form>

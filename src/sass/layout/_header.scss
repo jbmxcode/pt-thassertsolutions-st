@@ -2,32 +2,53 @@
     @include flex-all(column);
     
     .content-links {
+        @include flex-all(row, space-between, center);
         position: absolute;
         top: 0;
         right: 0;
+        color: $color-over-secondary;
 
-        a {
-            @include flex-all($align: center);
-            text-decoration: none;
-            color: $c-white;
+        .content-links-column { 
+            flex: 1;
+            position: relative; 
 
-            svg {
-                width: 28px;
-                height: 28px;
-                margin-left: 10px;
-                fill: $primary-color;
-                transition: fill .5s;
+            &:last-child {
+                a {
+                    @include flex-all($justify: flex-end, $align: center);
+                    text-decoration: none;
+                    color: inherit;
+        
+                    svg {
+                        width: 28px;
+                        height: 28px;
+                        margin-left: 10px;
+                        fill: $primary-color;
+                        transition: fill .5s;
+                    }
+        
+                    @include hover {
+                        svg { fill: $c-white; }
+                    }
+                }
             }
+        }
 
-            @include hover {
-                svg { fill: $c-white; }
-            }
+        .content-links__inner { 
+            left: 0; 
+        }
+
+        .action-dots {
+            color: $color-over-secondary;
+            
+            svg { fill: $primary-color; }
         }
 
         @include respond-to($vp-max) {
             position: absolute;
             top: 24px;
-            right: 60px;
+
+            &:first-child { left: 60px; }
+            &:last-child { right: 60px; }
         }
     }
 }
