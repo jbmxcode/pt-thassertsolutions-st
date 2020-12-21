@@ -1,0 +1,7 @@
+body.users {
+    .content-body {
+        @include respond-to($vp-large) {
+            justify-content: flex-start;
+        }
+    }
+}

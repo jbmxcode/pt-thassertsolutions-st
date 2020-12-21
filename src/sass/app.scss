@@ -32,6 +32,7 @@
 // Modules
 // ------------------------------------------------------------
 
+@import "modules/alerts";
 @import "modules/form";
 @import "modules/login";
 @import "modules/tables";
@@ -40,6 +41,7 @@
 // ------------------------------------------------------------
 
 @import "pages/home";
+@import "pages/users";
 
 // Overrides
 // ------------------------------------------------------------

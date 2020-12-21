@@ -1,0 +1,6 @@
+<?php
+$mysqli = new mysqli("localhost", "root", "", "pt_thassertsolutions");
+
+if($mysqli->connect_error) {
+    exit('Error connecting to database');
+}

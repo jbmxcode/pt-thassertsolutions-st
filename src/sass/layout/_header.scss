@@ -24,7 +24,7 @@
             }
         }
 
-        @include respond-to($vp-large) {
+        @include respond-to($vp-max) {
             position: absolute;
             top: 24px;
             right: 60px;
