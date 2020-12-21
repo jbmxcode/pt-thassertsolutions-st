@@ -1,0 +1,19 @@
+.alert {
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+
+    &-danger {
+        color: $c-white;
+        background-color: rgb(133, 10, 10);
+    }
+
+    &-success {
+        color: $c-white;
+        background-color: rgb(49, 133, 10);
+    }
+}

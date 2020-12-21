@@ -18,7 +18,7 @@
         transform: uppercase;
     }
 
-    @include respond-to($vp-large) {
+    @include respond-to($vp-max) {
         text-align: left;
     }
 }

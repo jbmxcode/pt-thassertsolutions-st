@@ -106,7 +106,7 @@
 		}
 	}
 
-	@include respond-to($vp-large) {		
+	@include respond-to($vp-max) {		
 		@include flex-all($justify: space-between);
 		position: relative;
 		border-radius: 10px;
@@ -154,10 +154,14 @@
 		}
 
 		&-body {		
-			overflow: visible;	
+			overflow: auto;	
 			width: 800px;
 			height: 620px;
-			padding: 3.125rem;
+			padding: 0;
+
+			&__inner {
+				padding: 3.125rem;
+			}
 		
 			&:before {
 				content: "";
